@@ -3,6 +3,7 @@ About r-isingsampler-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-isingsampler-feedstock/blob/main/LICENSE.txt)
 
+
 About r-isingsampler
 --------------------
 
@@ -11,6 +12,7 @@ Home: github.com/SachaEpskamp/IsingSampler
 Package license: GPL-2.0-only
 
 Summary: Sample states from the Ising model and compute the probability of states. Sampling can be done for any number of nodes, but due to the intractibility of the Ising model the distribution can only be computed up to ~10 nodes.
+
 About r-isingsampler
 --------------------
 
