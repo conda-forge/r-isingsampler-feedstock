@@ -1,4 +1,4 @@
-{% set version = '0.2.1' %}
+{% set version = "0.2.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/IsingSampler_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/IsingSampler/IsingSampler_{{ version }}.tar.gz
-  sha256: fb9d1c851941d74d218ae5be6d45ea3e9c228c938ef9cdfd34de9535cadc44b3
+  sha256: 7d6f146d79e6b1b36338df03e13547efd14146946cf490045df8c2b663a2bda4
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
 
   rpaths:
     - lib/R/lib/
@@ -59,9 +59,7 @@ about:
   home: github.com/SachaEpskamp/IsingSampler
 
   license: GPL-2.0-only
-  summary: Sample states from the Ising model and compute the probability of states. Sampling
-    can be done for any number of nodes, but due to the intractibility of the Ising
-    model the distribution can only be computed up to ~10 nodes.
+  summary: Sample states from the Ising model and compute the probability of states. Sampling can be done for any number of nodes, but due to the intractibility of the Ising model the distribution can only be computed up to ~10 nodes.
 
   license_family: GPL2
   license_file:
