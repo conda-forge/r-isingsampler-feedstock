@@ -1,4 +1,4 @@
-{% set version = "0.2.3" %}
+{% set version = "0.2.4" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,14 +9,17 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/IsingSampler_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/IsingSampler/IsingSampler_{{ version }}.tar.gz
-  sha256: 7d6f146d79e6b1b36338df03e13547efd14146946cf490045df8c2b663a2bda4
+  sha256: 3042ef7f707716505462bc835af9615c37d5fbd34d3262757c775176ff660179
 
 build:
-  number: 1
-
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -32,7 +35,6 @@ requirements:
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
-
   host:
     - r-base
     - r-rcpp >=0.10.4
@@ -40,7 +42,6 @@ requirements:
     - r-magrittr
     - r-nnet
     - r-plyr
-
   run:
     - r-base
     - r-rcpp >=0.10.4
@@ -56,10 +57,8 @@ test:
 
 about:
   home: github.com/SachaEpskamp/IsingSampler
-
   license: GPL-2.0-only
   summary: Sample states from the Ising model and compute the probability of states. Sampling can be done for any number of nodes, but due to the intractibility of the Ising model the distribution can only be computed up to ~10 nodes.
-
   license_family: GPL2
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
