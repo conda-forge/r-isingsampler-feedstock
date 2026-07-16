@@ -1,4 +1,4 @@
-{% set version = "0.2.4" %}
+{% set version = "0.5.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/IsingSampler_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/IsingSampler/IsingSampler_{{ version }}.tar.gz
-  sha256: 3042ef7f707716505462bc835af9615c37d5fbd34d3262757c775176ff660179
+  sha256: 853f82611fcf046633976510ef7e8e62223f3fa38b5aa9453b17712fa5982ed9
 
 build:
   number: 0
